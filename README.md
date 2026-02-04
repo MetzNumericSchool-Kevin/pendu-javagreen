@@ -1,0 +1,71 @@
+# Projet JavaScript - Jeu du Pendu
+
+Le Pendu est un jeu de devinette où l'objectif est de trouver un mot caché en proposant des lettres, avec un nombre limité d'erreurs autorisées.
+
+## Capacités du jeu
+
+- Le jeu propose un mot aléatoire à deviner
+- Le joueur dispose de 5 erreurs maximum
+- Chaque erreur fait apparaître une partie du dessin du pendu
+- Le mot est affiché avec des underscores (\_) pour les lettres non trouvées
+
+## Fonctionnalités à développer
+
+### Initialisation du jeu
+
+- Au chargement de la page, sélectionner un mot aléatoire dans la liste
+- Afficher le mot avec des underscores pour chaque lettre
+- Mettre en place l'écouteur d'événements clavier
+
+### Boucle principale du jeu
+
+- Le joueur tape une lettre sur son clavier physique
+- Seules les lettres de A à Z sont acceptées
+- Une lettre déjà jouée ne peut pas être rejouée
+
+**Si la lettre est dans le mot :**
+
+- Remplacer tous les underscores correspondants par la lettre trouvée
+- Afficher la lettre dans la zone "Lettres jouées" avec un badge vert (succès)
+
+**Si la lettre n'est pas dans le mot :**
+
+- Incrémenter le compteur d'erreurs
+- Afficher la partie suivante du dessin du pendu
+- Afficher la lettre dans la zone "Lettres jouées" avec un badge rouge (erreur)
+
+### Gestion de la fin de partie
+
+**Victoire :**
+
+- Quand toutes les lettres du mot sont trouvées
+- Afficher un message de félicitations
+- Proposer de rejouer
+
+**Défaite :**
+
+- Quand le nombre d'erreurs atteint 5
+- Afficher le dessin complet du pendu
+- Révéler le mot à trouver
+- Afficher un message de game over
+- Proposer de rejouer
+
+### Statistiques
+
+- Afficher le nombre d'erreurs en temps réel (format: X/5)
+- Enregistrer et afficher le record de parties gagnées consécutives
+- Utiliser le localStorage pour persister le record entre les sessions
+
+### Rejouer
+
+Quand le joueur clique sur "Nouvelle Partie" ou "Rejouer" :
+
+- Réinitialiser le compteur d'erreurs
+- Cacher toutes les parties du dessin du pendu
+- Sélectionner un nouveau mot aléatoire
+- Réactiver toutes les lettres du clavier
+- Afficher le nouveau mot avec des underscores
+
+## Notes
+
+- [Voir la documentation de DaisyUI](https://daisyui.com/components/) pour les componsants Badge, Modal, etc.
