@@ -80,7 +80,7 @@ function getPlayerInput(event) {
     let letter = event.key.toUpperCase()
 
     // check if letter already played
-    if (!(letters_played.includes(letter))) {
+    if (!(letters_played.includes(letter)) && isLetter(letter)) {
         // Check if letter in word
         let is_letter_found = false
         for (i=1; i<=nb_letters; i++) {
@@ -163,4 +163,8 @@ function showRecord() {
 function showGameOverMessage(message) {
     document.getElementById("game-result").textContent = message
     GAME_OVER.showModal()
+}
+
+function isLetter(str) {
+    return str.match(/[a-z]/i)
 }
