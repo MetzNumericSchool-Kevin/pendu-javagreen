@@ -2,8 +2,6 @@
 // Posted by Miguel bastidas, modified by community. See post 'Timeline' for change history
 // Retrieved 2026-02-05, License - CC BY-SA 4.0
 
-
-const WORDS_FILE = "words.txt"
 const WORDS = ["MAGIC", "CARROT", "INSUFFERABLE"]
 const ERRORS_MAX = 5
 
@@ -12,6 +10,7 @@ const BUTTON_NEW_GAME = document.querySelector('.sidebar button:first-of-type')
 const ERRORS_COUNTER = document.getElementById('errors')
 const LETTERS_USED = document.getElementById('letters-used')
 const BOARD = document.getElementById('word-display')
+BOARD.innerHTML = ""
 const RECORD = document.getElementById('record')
 const GAME_OVER = document.getElementById('game-over-modal')
 
@@ -21,7 +20,6 @@ LETTERS_USED.appendChild(document.createElement("div"))
 const RIGHT_LETTERS = LETTERS_USED.querySelector("div:first-child")
 const WRONG_LETTERS = LETTERS_USED.querySelector("div:last-child")
 console.log(RIGHT_LETTERS)
-
 
 RIGHT_LETTERS.classList.add("text-green-600")
 WRONG_LETTERS.classList.add("text-red-600")
@@ -35,7 +33,6 @@ localStorage.setItem("record", 0)
 
 BUTTON_NEW_GAME.addEventListener('click', startNewGame)
 GAME_OVER.querySelector('button').addEventListener('click', startNewGame)
-
 
 
 // -------------------------------------------------------------------------------------------
